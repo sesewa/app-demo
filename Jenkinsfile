@@ -13,7 +13,7 @@ pipeline {
           steps {
             echo 'Jenkins is working today'
               sh 'pwd && ls && cd app'
-              //sh 'cd /app'
+              sh 'curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose'
               sh 'ls'
              sh 'docker-compose -f /var/jenkins_home/workspace/app/app/docker-compose.yml up -d'
             
