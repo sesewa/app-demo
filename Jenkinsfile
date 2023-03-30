@@ -9,7 +9,7 @@ pipeline {
                 git branch: 'main', credentialsId: 'ssh_git', url: 'https://github.com/sesewa/app-demo.git'
             }
         }
-        stage('NPM Install') {
+        stage('demo') {
           steps {
             echo 'Jenkins is working'
             
