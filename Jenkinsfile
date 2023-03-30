@@ -11,7 +11,7 @@ pipeline {
         }
         stage('demo') {
           steps {
-            echo 'Jenkins is working'
+            echo 'Jenkins is working today'
             
           }
         }
