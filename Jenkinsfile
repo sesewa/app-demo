@@ -12,9 +12,9 @@ pipeline {
         stage('demo') {
           steps {
             echo 'Jenkins is working today'
-              sh 'pwd && ls'
+              sh 'pwd && ls && cd app'
               //sh 'cd /app'
-              //sh 'ls'
+              sh 'ls'
              sh 'docker-compose -f /var/jenkins_home/workspace/app/app/docker-compose.yml up -d'
             
           }
