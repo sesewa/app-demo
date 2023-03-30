@@ -14,7 +14,8 @@ pipeline {
             echo 'Jenkins is working today'
               sh 'pwd && ls'
              sh 'cd ./app'
-             sh 'docker-compose . up -d'
+              sh 'ls'
+             sh 'docker-compose -f up -d'
             
           }
         }
