@@ -15,7 +15,7 @@ pipeline {
               sh 'pwd && ls && cd app'
               sh 'curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose'
               sh 'ls'
-             sh 'sudo docker-compose -f docker-compose.yml up -d'
+             sh 'docker-compose -f docker-compose.yml up -d'
             
           }
         }
