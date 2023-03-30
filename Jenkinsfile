@@ -12,6 +12,8 @@ pipeline {
         stage('demo') {
           steps {
             echo 'Jenkins is working today'
+             sh 'cd app'
+             sh 'docker-compose . up -d'
             
           }
         }
