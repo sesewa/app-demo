@@ -15,7 +15,7 @@ pipeline {
               sh 'pwd && ls'
               //sh 'cd /app'
               sh 'ls'
-             sh 'docker-compose -f $WORKSPACE/docker-compose.yml up -d'
+             sh 'docker-compose -f $WORKSPACE/app/docker-compose.yml up -d'
             
           }
         }
