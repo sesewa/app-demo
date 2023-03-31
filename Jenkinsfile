@@ -11,7 +11,7 @@ pipeline {
         }
         stage('demo') {
           environment { 
-                SSH_CRED = credentials('ssh_git')
+                SSH_CRED = credentials('sesewa-devops')
             }
           steps {
             script {
