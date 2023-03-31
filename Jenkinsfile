@@ -10,12 +10,21 @@ pipeline {
             }
         }
         stage('demo') {
+          environment { 
+                SSH_CRED = credentials('ssh_git')
+            }
           steps {
-            echo 'Jenkins is working today'
-              sh 'pwd && ls && cd app'
-              sh 'curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose'
-              sh 'ls'
-             sh 'docker-compose -f docker-compose.yml up -d'
+            script {
+                    sh """
+                    #!/bin/bash
+                    ssh -i "$SSH_CRED" -o StrictHostKeyChecking=no ec2-35-183-186-95.ca-central-1.compute.amazonaws.com << EOF
+                    git clone https://github.com/sesewa/app-demo.git
+                    cd app
+                    docker-compose . up -d
+                    exit
+                    EOF
+                    """
+                }
             
           }
         }
