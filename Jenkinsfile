@@ -17,7 +17,7 @@ pipeline {
             script {
                     sh """
                     #!/bin/bash
-                    ssh -i "$SSH_CRED" -o StrictHostKeyChecking=no ec2-35-183-186-95.ca-central-1.compute.amazonaws.com << EOF
+                    ssh -i "$SSH_CRED" -o StrictHostKeyChecking=no ubuntu@ec2-35-183-186-95.ca-central-1.compute.amazonaws.com << EOF
                     git clone https://github.com/sesewa/app-demo.git
                     cd app
                     docker-compose . up -d
