@@ -3,12 +3,12 @@ pipeline {
 
     
     stages {
-        stage('Gitclone') {
-            steps {
-                // Get some code from a GitHub repository
-                git branch: 'main', credentialsId: 'ssh_git', url: 'https://github.com/sesewa/app-demo.git'
-            }
-        }
+//         stage('Gitclone') {
+//             steps {
+//                 // Get some code from a GitHub repository
+//                 git branch: 'main', credentialsId: 'ssh_git', url: 'https://github.com/sesewa/app-demo.git'
+//             }
+//         }
         stage('demo') {
           environment { 
                 SSH_CRED = credentials('sesewa-devops')
